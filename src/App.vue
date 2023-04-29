@@ -1,32 +1,42 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <gButton></gButton>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import gButton from './components/gButton.vue'
+
+export default {
+  name: 'App',
+  components: {gButton},
+};
+</script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav {
-  padding: 30px;
+body {
+  font-size: var(--font-size);
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+#app{
+  margin: 20px;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+/* css变量声明 */
+:root {
+  --button-height:32px;
+  --font-size:14px;
+  --button-bg:white;
+  --button-active-bg:#eee;
+  --border-radius:4px;
+  --color:#333;
+  --border-color:#999;
+  --border-color-hover:#666;
 }
 </style>
